@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL STORAGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Auto Save Textarea</h1>
+        <textarea id="myTextarea" rows="10" cols="50" placeholder="Start typing here..."></textarea>
+    </div>
+
+    <script>
+
+         
+const textarea = document.getElementById("myTextarea");
+textarea.addEventListener("input", saveToLocalStorage);
+ 
+function saveToLocalStorage() {
+    localStorage.setItem("savedText", textarea.value);
+}
+
+ 
+if (localStorage.getItem("savedText")) {
+    textarea.value = localStorage.getItem("savedText");
+}
+
+ 
+
+    </script>
+</body>
+</html>
